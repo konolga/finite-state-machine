@@ -1,6 +1,7 @@
 import React from "react";
 import Machine from "FiniteStateMachine";
 import Loader from "react-loader-spinner";
+import "./User.scss";
 
 const User = () => {
   const { loading, error, results } = Machine("http://localhost:3000/users");
@@ -16,12 +17,19 @@ const User = () => {
 const UserDetails = ({ data: { first_name, last_name, email, gender }}) => {
   return (
     <div className="details-container">
-      <h4>{first_name}</h4>
-      <h4>{last_name}</h4>
-      <h4>{email}</h4>
-      <h4>{gender}</h4>
+      <div className="row title">{first_name}{' '}{last_name}</div>
+      <div className="row email">{email}</div>
+      <div className="row gender">{gender}</div>
     </div>
   );
 };
 
 export default User;
+
+//TODO:
+// scss for UserDetails
+// Tests for 3 cases
+// working demo: maybe 3 buttons for 3 cases
+// client-side mock server responses ?
+
+// presentation
