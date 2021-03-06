@@ -1,14 +1,10 @@
+import React from "react";
+import User from './user'
 
-import React from 'react'
-import FiniteStateMachine from 'FiniteStateMachine'
-
-class App extends React.Component {
-  render() {
-    return (
-      <FiniteStateMachine>
-        I am FiniteStateMachine component
-      </FiniteStateMachine>
-    )
-  }
+function App() {
+  return(
+    <User></User>
+  );
 }
-export default App
+
+export default App;
