@@ -1,0 +1,6 @@
+{
+  "private": false,
+  "name": "FiniteStateMachine",
+  "main": "./FiniteStateMachine.js",
+  "type": "module"
+}
