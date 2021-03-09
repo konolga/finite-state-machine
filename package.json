@@ -12,7 +12,7 @@
     "@typescript-eslint/eslint-plugin": "^4.5.0",
     "@typescript-eslint/parser": "^4.5.0",
     "babel-eslint": "^10.1.0",
-    "babel-jest": "^26.6.0",
+    "babel-jest": "^26.6.3",
     "babel-loader": "8.1.0",
     "babel-plugin-named-asset-import": "^0.3.7",
     "babel-preset-react-app": "^10.0.0",
@@ -38,9 +38,12 @@
     "identity-obj-proxy": "3.0.0",
     "jest": "26.6.0",
     "jest-circus": "26.6.0",
+    "jest-fetch-mock": "^3.0.3",
     "jest-resolve": "26.6.0",
     "jest-watch-typeahead": "0.6.1",
     "mini-css-extract-plugin": "0.11.3",
+    "nock": "^13.0.11",
+    "node-fetch": "^2.6.1",
     "node-sass": "^5.0.0",
     "optimize-css-assets-webpack-plugin": "5.0.4",
     "pnp-webpack-plugin": "1.6.4",
@@ -56,6 +59,8 @@
     "react-dom": "^17.0.1",
     "react-loader-spinner": "^4.0.0",
     "react-refresh": "^0.8.3",
+    "react-scripts": "^4.0.3",
+    "react-test-renderer": "^17.0.1",
     "resolve": "1.18.1",
     "resolve-url-loader": "^3.1.2",
     "sass-loader": "^10.0.5",
@@ -74,7 +79,8 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "lib": "babel --plugins @babel/transform-react-jsx src/node_modules --out-dir lib --copy-files",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "test:debug": "node react-scripts --inspect-brk test --runInBand --no-cache"
   },
   "eslintConfig": {
     "extends": [
@@ -124,6 +130,7 @@
       "^.+\\.module\\.(css|sass|scss)$"
     ],
     "modulePaths": [],
+    "type": "module",
     "moduleNameMapper": {
       "^react-native$": "react-native-web",
       "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
@@ -155,6 +162,7 @@
   "devDependencies": {
     "@babel/cli": "^7.13.0",
     "@babel/plugin-transform-react-jsx": "^7.12.17",
+    "@babel/preset-env": "^7.13.9",
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
