@@ -1,35 +1,33 @@
 import React from "react";
-import Machine from "FiniteStateMachine";
 import Loader from "react-loader-spinner";
 import "./User.scss";
+import Machine from "../lib/FiniteStateMachine/FiniteStateMachine";
 
-const User = () => {
-  const { loading, error, results } = Machine("http://localhost:3000/users");
+const getData = () => {
+    return Machine("http://localhost:3000/users");
+};
+
+export const User = () => {
+  const { loading, error, results } = getData();
+
   return loading ? (
-    <Loader type="Circles" color="#00BFFF" height={80} width={80}></Loader>
-  ) : error ? (
-    <h3 className="error"> {"User not found"} </h3>
+    <Loader className="loader" type="Circles"></Loader>
+  ) : !error && results != null ? (
+    results.map((result, index) => <UserDetails data={result} key={index} />)
   ) : (
-    results.map((result, index) => <UserDetails data={result} key={index}/>)
+    <h3 className="error"> {"User not found"} </h3>
   );
 };
 
-const UserDetails = ({ data: { first_name, last_name, email, gender }}) => {
+export const UserDetails = ({ data: { first_name, last_name, email, gender } }) => {
   return (
     <div className="details-container">
-      <div className="row title">{first_name}{' '}{last_name}</div>
+      <div className="row title">
+        {first_name} {last_name}
+      </div>
       <div className="row email">{email}</div>
       <div className="row gender">{gender}</div>
     </div>
   );
 };
 
-export default User;
-
-//TODO:
-// scss for UserDetails
-// Tests for 3 cases
-// working demo: maybe 3 buttons for 3 cases
-// client-side mock server responses ?
-
-// presentation
