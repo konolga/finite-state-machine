@@ -80,8 +80,11 @@
     "build": "node scripts/build.js",
     "lib": "babel --plugins @babel/transform-react-jsx src/node_modules --out-dir lib --copy-files",
     "test": "node scripts/test.js --env=jsdom",
-    "test:debug": "node react-scripts --inspect-brk test --runInBand --no-cache"
+    "test:debug": "node react-scripts --inspect-brk test --runInBand --no-cache",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
+  "homepage": "http://konolga.github.io/finite-state-machine",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -166,6 +169,8 @@
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1"
+    "babel-preset-stage-0": "^6.24.1",
+    "gh-pages": "^3.1.0",
+    "install": "^0.13.0"
   }
 }
