@@ -4,14 +4,19 @@ import "./User.scss";
 import Machine from "../lib/FiniteStateMachine/FiniteStateMachine";
 
 const getData = () => {
-    return Machine("http://localhost:3000/users");
+  return Machine("http://localhost:3000/users");
 };
 
 export const User = () => {
   const { loading, error, results } = getData();
-
   return loading ? (
-    <Loader className="loader" type="Circles"></Loader>
+    <Loader
+      className="loader"
+      type="Circles"
+      color="#8bacbd"
+      height={80}
+      width={80}
+    ></Loader>
   ) : !error && results != null ? (
     results.map((result, index) => <UserDetails data={result} key={index} />)
   ) : (
@@ -19,9 +24,11 @@ export const User = () => {
   );
 };
 
-export const UserDetails = ({ data: { first_name, last_name, email, gender } }) => {
+export const UserDetails = ({
+  data: { first_name, last_name, email, gender },
+}) => {
   return (
-    <div className="details-container">
+    <div className="details">
       <div className="row title">
         {first_name} {last_name}
       </div>
@@ -30,4 +37,3 @@ export const UserDetails = ({ data: { first_name, last_name, email, gender } }) 
     </div>
   );
 };
-

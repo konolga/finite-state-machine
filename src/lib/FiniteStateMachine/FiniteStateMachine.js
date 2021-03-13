@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 
 const states = {
@@ -29,7 +30,7 @@ const Machine = (...args) => {
 
   useEffect(() => {
     doFetch();
-  });
+  }, []);
 
   return currentState;
 };
