@@ -1,6 +1,16 @@
-# Getting Started with Create React App
+# Finite state machine App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Demo
+Open [Demo](https://konolga.github.io/finite-state-machine/) to view it in the browser.
+
+## Screenshots
+#### Loading state representation:
+![LOADING](public/loading.JPG)
+#### Error state representation:
+![ERROR](public/error.JPG)
+#### Success state representation:
+![SUCCESS](public/success.JPG)
+
 
 ## Available Scripts
 
@@ -8,7 +18,7 @@ In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
+Runs the app in the development mode.
 Open [http://localhost:4200](http://localhost:4200) to view it in the browser.
 
 
@@ -18,5 +28,4 @@ To run mock json server. Open [http://localhost:3000](http://localhost:3000) to 
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in the interactive watch mode.
